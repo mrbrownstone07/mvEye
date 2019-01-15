@@ -1,0 +1,8 @@
+.span-text{
+    display: none;
+}
+
+.span:hover .span-text{
+    display: inline;
+}
+

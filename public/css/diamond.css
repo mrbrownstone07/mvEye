@@ -1,0 +1,28 @@
+#diamond .wrap{
+    
+    margin-left: 45%;
+}
+
+#cut-diamond { 
+    border-style: solid; 
+    border-color: transparent transparent rgba(0, 0, 0, 0.5) transparent; 
+    border-width: 0 50px 50px 50px; 
+    height: 0; 
+    width: 100px; 
+    box-sizing: content-box; 
+    position: relative; 
+    margin: 40px 0 100px 0; 
+} 
+#cut-diamond:after {
+    content: ""; 
+    position: absolute; 
+    top: 50px; 
+    left: -50px; 
+    width: inherit; 
+    height: inherit; 
+    border-style: solid; 
+    border-color: rgba(0, 0, 0, 0.5) transparent transparent transparent; 
+    border-width: 140px 100px 0 100px; 
+}
+
+

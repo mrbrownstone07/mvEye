@@ -1,0 +1,19 @@
+.main-nav-item :hover ~ .line{
+    bottom: 0;
+    transition: .20s;
+    height: 10%;
+}
+
+.line{
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    width: inherit;
+    height: 0;
+    background-color: black;
+    transition: .10s ease;
+}
+
+.dropdown-menu{
+    margin-top: 9%;
+}

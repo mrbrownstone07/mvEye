@@ -1,0 +1,111 @@
+.img-div{
+    background-image: url("/imgs/3.jpg") !important;
+    background-size: cover;
+    /* background-repeat: no-repeat;  */
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+#top-projects .img-1{
+    background-image: url("/imgs/1.jpg") !important;
+    background-size: cover; 
+    background-attachment: fixed;
+    width: 100%;
+    height: 50%;
+}
+
+#top-projects .img-2{
+    background-image: url("/imgs/3.jpg") !important;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 50%;
+}
+
+#top-projects .img-3{
+    background-image: url("/imgs/4.jpg") !important;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 50%;
+}
+
+#top-projects .img-4{
+    background-image: url("/imgs/5.jpg") !important;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 50%;
+}
+
+.vertical-text {
+	float: left;
+}
+
+.overlay {
+    position: absolute; 
+    bottom: 0; 
+    color: #f1f1f1; 
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.contain:hover .overlay {
+    opacity: 1;
+}
+
+.carousel-inner{
+    width: 100%;
+    height: 100%;
+       
+}
+.carousel-inner .carousel-item{
+    width: 100%;
+    height: 100%; 
+}
+
+
+
+.i-1{
+    background-image: url("/imgs/2.jpg") !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-color: cornsilk;
+    width: 100%;
+    height: 100%;
+}
+
+.i-2{
+    background-image: url("/imgs/3.jpg") !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;  
+}
+
+.i-3{
+    background-image: url("/imgs/4.jpg") !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+}
+.i-4{
+    background-image: url("/imgs/5.jpg") !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;   
+}
