@@ -11,10 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.landing');
-});
-
+Route::get('/', 'PagesController@index');
+Route::get('/about_us', 'PagesController@aboutUs');
+Route::get('/contact_us', 'PagesController@contactUs');
+Route::get('/news', 'PagesController@news');
+Route::get('/jobs', 'PagesController@jobs');
+Route::get('/architecture_secvice', 'ServicesController@archService');
+Route::get('/interior_service', 'ServicesController@interiorService');
+Route::get('/rendering_service', 'ServicesController@renderService');
+Route::get('/animation_service', 'ServicesController@animationService');
+Route::get('/achitecture_projects', 'ProjectsController@archProject');
+Route::get('/interior_projects', 'ProjectsController@interiorProject');
+Route::get('/rendering_gallery', 'GalleryController@renderGallery');
+Route::get('/animations_gallery', 'GalleryController@animationGallery');
 
 
 

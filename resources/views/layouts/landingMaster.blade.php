@@ -15,6 +15,7 @@
 
         <!-- Stylesheet -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/master.css') }}" rel="stylesheet">
         
         
         <!-- App Name -->
@@ -35,5 +36,6 @@
     <body style="margin-top:55px">
         @include('inc.navbar')
         @yield('content')
+        {{-- @include('components.footbar') --}}
     </body>
 </html>

@@ -1,7 +1,11 @@
 .main-nav-item :hover ~ .line{
     bottom: 0;
-    transition: .20s;
+    transition: .20s ease;
     height: 10%;
+}
+
+.nav-link{
+    text-transform: capitalize !important;
 }
 
 .line{

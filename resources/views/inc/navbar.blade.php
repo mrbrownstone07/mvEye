@@ -39,11 +39,24 @@
                         Projects
                     </a>
                     <div class="dropdown-menu shadow dropdown-menu-right" aria-labelledby="navbarDropdown" style="">
+                        <a class="dropdown-item nav-link" href="/achitecture_projects">
+                            Architecture
+                        </a>                        
                         <a class="dropdown-item nav-link" href="/interior_projects">
-                            Interior
+                            Interior Design
                         </a>
-                        <a class="dropdown-item nav-link" href="/exterior_projects">
-                            Exterior
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link main-nav-item dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Gallery
+                    </a>
+                    <div class="dropdown-menu shadow dropdown-menu-right" aria-labelledby="navbarDropdown" style="">
+                        <a class="dropdown-item nav-link" href="/rendering_gallery">
+                            3D-Rendering
+                        </a>
+                        <a class="dropdown-item nav-link" href="/animations_gallery">
+                            3D-Animation
                         </a>
                     </div>
                 </li>
@@ -52,14 +65,14 @@
                         Services
                     </a>
                     <div class="dropdown-menu shadow dropdown-menu-right" aria-labelledby="navbarDropdown" style="">
+                        <a class="dropdown-item nav-link" href="/architecture_secvice">
+                            Architecture
+                        </a>
                         <a class="dropdown-item nav-link" href="/interior_service">
-                            Interior
+                            Interior Design
                         </a>
                         <a class="dropdown-item nav-link" href="/rendering_service">
                             3D-Rendering
-                        </a>
-                        <a class="dropdown-item nav-link" href="/architecture_secvice">
-                            Architecture
                         </a>
                         <a class="dropdown-item nav-link" href="/animation_service">
                             3D-Animation

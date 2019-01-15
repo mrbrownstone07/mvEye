@@ -1,37 +1,38 @@
 <link href="{{ asset('css/cube.css') }}" rel="stylesheet">
 <script src="{{ asset('js/cube.js') }}" defer></script>
+
 <div class="wrap">
     <div class="cube">           
         <div class="rotating-box text-center shadow-lg">
             <div class="single-rb">
                 <div class="front-side">
-                    <a href="">
-                        <img src="{{ URL::to('imgs/cube/1.jpg') }}" alt="image not found" class="" style="">
+                    <a href="/rendering_gallery">
+                        <img src="{{ URL::to('imgs/cube/3.jpg') }}" alt="image not found" class="" style="">
                     </a>
                 </div>
                 <div class="back-side">
-                    <a href="">
+                    <a href="/interior_projects">
                         <img src="{{ URL::to('imgs/cube/4.jpg') }}" alt="image not found" class="" style="">
                     </a>
                 </div>
                 <div class="left-side"> 
-                    <a href="">
-                        <img src="{{ URL::to('imgs/cube/5.jpg') }}" alt="image not found" class="" style="">
+                    <a href="/achitecture_projects">
+                        <img src="{{ URL::to('imgs/cube/11.jpg') }}" alt="image not found" class="" style="">
                     </a>                  
                 </div>
                 <div class="right-side">
-                    <a href="">
-                        <img src="{{ URL::to('imgs/cube/3.jpg') }}" alt="image not found" class="" style="">
+                    <a href="/animations_gallery">
+                        <img src="{{ URL::to('imgs/cube/21.jpg') }}" alt="image not found" class="" style="">
                     </a>
                 </div>
                 <div class="top-side">
-                    <a href="">
-                        <img src="{{ URL::to('imgs/cube/2.jpg') }}" alt="image not found" class="" style="">
+                    <a href="/">
+                        <img src="{{ URL::to('imgs/cube/top.jpg') }}" alt="image not found" class="" style="">
                     </a>
                 </div>
                 <div class="bottom-side">
                     <a href="">
-                        <img src="{{ URL::to('imgs/cube/2.jpg') }}" alt="image not found" class="" style="">
+                        <img src="{{ URL::to('imgs/cube/top.jpg') }}" alt="image not found" class="" style="">
                     </a>
                 </div>
             </div>

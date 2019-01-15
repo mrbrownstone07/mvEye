@@ -1,8 +1,13 @@
 $(function(){
     var i = 20;
+
+    
     $(window).mousemove(function(e){
-        console.log(e.pageY);
-            $('.single-rb').css('transform', 'rotateX(' + - i + 'deg)' + 'rotateY(' + -(e.pageY+10) + 'deg)');
+        var dt = new Date();
+        var time = dt.getSeconds();
+        console.log(time);
+        // console.log(e.pageY);
+            $('.single-rb').css('transform', 'rotateX(' + - i + 'deg)' + 'rotateY(' + -(e.pageY+time)*2 + 'deg)');
     });
 })
 
