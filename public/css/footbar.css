@@ -1,8 +1,12 @@
-.span-text{
+#footbar .span-text{
     display: none;
 }
 
-.span:hover .span-text{
+#footbar .span:hover .span-text{
     display: inline;
+}
+
+#footbar .logo{
+    color:#119208;
 }
 

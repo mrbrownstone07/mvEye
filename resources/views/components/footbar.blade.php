@@ -2,9 +2,9 @@
 <div id="footbar" class=" card rounded-0 bottom" style="">
     <div class="card-body">
         <div class="row">
-            <div class="col-md-4 text-left">
+            <div class="col-md-6 text-left">
                 <div class="logo">
-                    <h2> Maverick Eye <span> Architects </span> </h2>
+                    <h2> Maverick Eye <span class="text-dark"> Architects </span> </h2>
                 </div>
                 <div class="icons">
                     <a href="https://www.facebook.com/MaverickEye">
@@ -31,7 +31,7 @@
                     country
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
 
             </div>
             <div class="col-md-4 text-right">

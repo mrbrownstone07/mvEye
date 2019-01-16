@@ -1,7 +1,6 @@
 $(function(){
     var i = 20;
 
-    
     $(window).mousemove(function(e){
         var dt = new Date();
         var time = dt.getSeconds();

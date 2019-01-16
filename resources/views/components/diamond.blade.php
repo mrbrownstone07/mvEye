@@ -4,7 +4,6 @@
         <div id="cut-diamond-border">
             <div id="cut-diamond"></div>
         </div>
-       
     </div>
 </div>
     

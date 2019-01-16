@@ -22,24 +22,28 @@
                     <a class="nav-link" href="/">Home</a>
                     <div class="line"></div>
                 </li>
-                <li class="nav-item main-nav-item">
-                    <a class="nav-link" href="/about_us">About Us</a>
-                    <div class="line"></div>
-                </li>
-                <li class="nav-item main-nav-item">
-                    <a class="nav-link" href="/news">News</a>
-                    <div class="line"></div>
-                </li>
-                <li class="nav-item main-nav-item">
-                    <a class="nav-link" href="/jobs">Jobs</a>
-                    <div class="line"></div>
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link main-nav-item dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        About us
+                    </a>
+                    <div class="dropdown-menu shadow dropdown-menu-right" aria-labelledby="navbarDropdown" style="">
+                        <a class="dropdown-item nav-link" href="/about_us">
+                            Team
+                        </a>                        
+                        <a class="dropdown-item nav-link" href="/news">
+                            News
+                        </a>
+                        <a class="dropdown-item nav-link" href="/jobs">
+                            Jobs
+                        </a>
+                    </div>
                 </li>  
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link main-nav-item dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         Projects
                     </a>
                     <div class="dropdown-menu shadow dropdown-menu-right" aria-labelledby="navbarDropdown" style="">
-                        <a class="dropdown-item nav-link" href="/achitecture_projects">
+                        <a class="dropdown-item nav-link" href="/architecture_projects">
                             Architecture
                         </a>                        
                         <a class="dropdown-item nav-link" href="/interior_projects">

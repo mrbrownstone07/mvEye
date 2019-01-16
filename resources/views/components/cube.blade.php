@@ -16,7 +16,7 @@
                     </a>
                 </div>
                 <div class="left-side"> 
-                    <a href="/achitecture_projects">
+                    <a href="/architecture_projects">
                         <img src="{{ URL::to('imgs/cube/11.jpg') }}" alt="image not found" class="" style="">
                     </a>                  
                 </div>
