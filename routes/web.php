@@ -29,14 +29,17 @@ Route::get('/rendering_gallery', 'GalleryController@renderGallery');
 Route::get('/animations_gallery', 'GalleryController@animationGallery');
 
 
-
-Route::get('/admin_interior_projects', 'ProjectsController@adminShowInteriorProjects');
+// admin interior project routes and controllers
+Route::get('/admin_interior_projects', 'ProjectsController@adminAllInteriorProjects');
 Route::get('/admin_interior_projects/create', 'ProjectsController@createInteriorProject');
 
 // admin arch project routes and controllers
-Route::get('/admin_architecture_projects', 'ProjectsController@adminShowArchProjects');
+Route::get('/admin_architecture_projects', 'ProjectsController@adminAllArchProjects');
 Route::get('/admin_architecture_projects/create', 'ProjectsController@createArchProject');
 Route::post('/admin_architecture_projects/store', 'ProjectsController@archProjectStore')->name('archProj.store');
+Route::get('/admin_architecture_projects/show/{id}','ProjectsController@adminShowArchProjects' );
+Route::get('/admin_architecture_projects/edit/{id}','ProjectsController@admineEditArchProjects' )->name('archProj.edit');
+Route::post('/admin_architecture_projects/update', 'ProjectsController@archProjectUpdate')->name('archProj.update');
 
 
 

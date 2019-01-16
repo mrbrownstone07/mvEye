@@ -30,7 +30,8 @@
                     @include('admin.components.sideNav')                        
                 </div>
                 
-                <div class="col-md-9">                    
+                <div class="col-md-9">
+                    @include('inc.messages')                    
                     @yield('mid_section')
                 </div>                
             </div> 
