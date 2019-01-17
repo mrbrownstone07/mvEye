@@ -7,7 +7,7 @@
                 Edit project information
             </div>
             <div class="card-body text-center">
-                <form action="{{ route('archProj.update') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('archProj.update', $project->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group row">
@@ -49,10 +49,10 @@
                     <div class="form-group row">
                         <label class="col-md-4 text-md-right" for="state">{{ __('state') }}</label>
                         <div class="col-md-3 text-md-left">
-                            <input value="{{$project->state}}" type="radio" name="state" id="state" value="0"> ongoing 
+                            <input type="radio" name="state" id="state" value="0"> ongoing 
                         </div>
                         <div class="col-md-3 text-md-right">
-                            <input value="{{$project->state}}" type="radio" name="state" id="state" value="1"> finished 
+                            <input type="radio" name="state" id="state" value="1"> finished 
                         </div>
                     </div>
 

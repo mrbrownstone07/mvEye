@@ -39,7 +39,8 @@ Route::get('/admin_architecture_projects/create', 'ProjectsController@createArch
 Route::post('/admin_architecture_projects/store', 'ProjectsController@archProjectStore')->name('archProj.store');
 Route::get('/admin_architecture_projects/show/{id}','ProjectsController@adminShowArchProjects' );
 Route::get('/admin_architecture_projects/edit/{id}','ProjectsController@admineEditArchProjects' )->name('archProj.edit');
-Route::post('/admin_architecture_projects/update', 'ProjectsController@archProjectUpdate')->name('archProj.update');
+Route::post('/admin_architecture_projects/update/{id}', 'ProjectsController@archProjectUpdate')->name('archProj.update');
+Route::post('/admin_architecture_projects/storeimg/{id}', 'ProjectsController@archProjectStoreImg')->name('archProj.storeImg');
 
 
 

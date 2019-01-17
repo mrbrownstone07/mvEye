@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
+use App\Image;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use App\Services\PayUService\Exception;
 
 
 class ProjectsController extends Controller
@@ -29,7 +31,7 @@ class ProjectsController extends Controller
     public function archProjectStore(Request $request){
         $this->validate($request,[
             'mainImg' => 'image|mimes:jpeg,png,jpg,gif,svg|max:8000',
-            'projName' => 'required',
+            'projName' => 'required|unique:projects',
             'tagLine' => 'required',
             'des' => 'required',
             'type' => 'required',
@@ -48,16 +50,47 @@ class ProjectsController extends Controller
         if($request->hasFile('mainImg')){
             $img = $request->file('mainImg');
             $fileName = $img->getClientOriginalName();
-            $fileName = md5($fileName . $request->input('projName')) . '.' . $request->mainImg->extension();
-            $folderName = "public/" . $request->input('projName');
+            $fileName = md5($fileName) . '.' . $request->mainImg->extension();
+            $folderName = "public/" . $request->input('projName') . '/bg';
             Storage::makeDirectory($folderName);
             $request->mainImg->storeAs($folderName, $fileName);
             $p->mainImg = $fileName;
         }
+
+
         
         $p->save();
 
         return redirect('/admin_architecture_projects/create')->with('success', 'project added');  
+    }
+
+    public function archProjectStoreImg(Request $request, $id){
+        $errors = '';
+        $p = Project::find($id);
+        if($request->hasFile('image')){
+            foreach ($request->image as $file) {
+                $i = new Image;
+                $fileName = $file->getClientOriginalName();
+                $fileName = md5($fileName) . $id . '.' . $file->extension();
+                $folderName = "public/" . $p->projectName;
+                Storage::makeDirectory($folderName);
+                $file->storeAs($folderName, $fileName);
+                $i->fileName = $fileName;
+                $i->project_id = $id;
+                try{
+                    $i->save();
+                }catch(\Exception $e){
+                    $errors .= $file->getClientOriginalName() . 'already exists <br>';
+                }
+                 
+            }
+
+            if($errors){
+                return redirect('/admin_architecture_projects/show/' . $id)->with('error', 'duplicate files: <br> '.$errors);
+            }
+            
+            return redirect('/admin_architecture_projects/show/' . $id)->with('success', 'images uploaded');
+        }
     }
 
     public function adminShowArchProjects($id){
@@ -68,13 +101,55 @@ class ProjectsController extends Controller
 
     public function admineEditArchProjects($id){
         $project = Project::find($id);
-
         return view('admin.projects.arch.edit')->with('project', $project);
     }
 
-    public function archProjectUpdate(Request $request){
+    public function archProjectUpdate(Request $request, $id){
+        $this->validate($request,[
+            'mainImg' => 'image|mimes:jpeg,png,jpg,gif,svg|max:8000',
+            'projName' => 'required',
+            'tagLine' => 'required',
+            'des' => 'required',
+            'type' => 'required',
+            'state' => 'required',
+            'projStart' => 'required',
+        ]);
+
+        $p = Project::find($id);
         
 
+        if($p->projectName != $request->input('projName') && !$request->hasFile('mainImg')){
+            $newFolderName = "public/" . $request->input('projName') . '/bg';
+            $oldFolderName = "public/" . $p->projectName . '/bg';
+            Storage::move($oldFolderName . '/' . $p->mainImg, $newFolderName . '/' . $p->mainImg);
+            Storage::deleteDirectory('public/' . $p->projectName);
+        }
+
+        if($request->hasFile('mainImg')){
+            $img = $request->file('mainImg');
+            $fileName = $img->getClientOriginalName();
+            $fileName = md5($fileName) . '.' . $request->mainImg->extension();
+            $newFolderName = "public/" . $request->input('projName') . '/bg';
+            $oldFolderName = "public/" . $p->projectName . '/bg';
+            
+            
+            Storage::makeDirectory($newFolderName);
+            Storage::deleteDirectory('public/' . $p->projectName);
+
+            $request->mainImg->storeAs($newFolderName, $fileName);
+            $p->mainImg = $fileName;
+        }
+
+        $p->projectName = $request->input('projName');
+        $p->tagline = $request->input('tagLine');
+        $p->description = $request->input('des');
+        $p->type = $request->input('type');
+        $p->state = $request->input('state');
+        $p->started_at = $request->input('projStart');
+
+        $p->save();
+
+        return redirect('/admin_architecture_projects/show/' . $id)->with('success', 'Edition is saved');
     }
 
 

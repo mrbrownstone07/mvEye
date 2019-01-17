@@ -40,12 +40,14 @@
 
                     {{-- hidden  --}}
                     <input type="hidden" class="form-control" name="type" id="type" value="0">
+                    
                     <div class="form-group row">
                         <label for="mainImg" class="col-md-4 text-md-right">{{ __('cover image')}}</label>
                         <div class="col-md-6 text-md-left">
                             <input type="file" name="mainImg" id="mainImg" class="form-control-file space">
                         </div>
                     </div>
+
                     <div class="form-group row">
                         <label class="col-md-4 text-md-right" for="state">{{ __('state') }}</label>
                         <div class="col-md-3 text-md-left">
