@@ -17,6 +17,14 @@
                         <div class="col-md-12 d-none d-md-block">
                             @include('components.cube')
                         </div>
+                        <div class="col-sm-6"> 
+                            <div class="cont">
+                                <div class="chevron"></div>
+                                <div class="chevron"></div>
+                                <div class="chevron"></div>
+                                <span class="text text-center">Scroll down</span>
+                            </div>
+                        </div>                             
                     </div>
                 </div>
             </div>
@@ -26,7 +34,16 @@
                         <div class="col-md-12 d-none d-md-block">
                             @include('components.cube')
                         </div>
-                    </div>                    
+                        <div class="col-md-6"> 
+                            <div class="cont">
+                                <div class="chevron"></div>
+                                <div class="chevron"></div>
+                                <div class="chevron"></div>
+                                <span class="text text-center">Scroll down</span>
+                            </div>
+                        </div>                                             
+                    </div>  
+                    
                 </div>
             </div>
             <div class="carousel-item i-3 overlay">
@@ -35,7 +52,16 @@
                         <div class="col-md-12 d-none d-md-block">
                             @include('components.cube')
                         </div>
-                    </div>                    
+                        <div class="col-md-6"> 
+                            <div class="cont">
+                                <div class="chevron"></div>
+                                <div class="chevron"></div>
+                                <div class="chevron"></div>
+                                <span class="text text-center">Scroll down</span>
+                            </div>
+                        </div>                            
+                    </div>
+
                 </div>
             </div>
             <div class="carousel-item i-4 overlay">
@@ -44,26 +70,19 @@
                         <div class="col-md-12 d-none d-md-block">
                             @include('components.cube')
                         </div>
-                    </div>                    
+                        <div class="col-md-6"> 
+                            <div class="cont">
+                                <div class="chevron"></div>
+                                <div class="chevron"></div>
+                                <div class="chevron"></div>
+                                <span class="text text-center">Scroll down</span>
+                            </div>
+                        </div>                            
+                    </div>                  
                 </div> 
             </div>
         </div>
-        {{-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a> --}}
     </div>
-    {{-- <div class="img-div">
-        <div class="h-100 row align-items-center">
-            <div class="col-md-12 d-none d-md-block">
-                @include('components.cube')
-            </div>
-        </div>
-    </div> --}}
 
     <div id="top-projects">
         <div class="img-1 contain">
@@ -99,7 +118,6 @@
             </div>            
         </div>
     </div>
-    
     @include('components.footbar')
 @endsection
 

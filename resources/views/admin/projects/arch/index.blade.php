@@ -37,9 +37,9 @@
             @foreach ($projects as $project)
                 <div class="col-md-4" style="padding:0px">
                     <a class="link-fix" id="arch-pro-link" href="admin_architecture_projects/show/{{$project->id}}">
-                        <div class="card rounded-0 border-0" style="">
-                            <img class="card-img" src="storage/{{$project->projectName}}/bg/{{$project->mainImg}}" 
-                                alt="Card image" style="height:300px">
+                        <div class="card rounded-0 border-0 hover-img" style="">
+                            <img class="card-img rounded-0 border-0" src="storage/{{$project->projectName}}/bg/{{$project->mainImg}}" 
+                                alt="Card image" style="height:400px">
                             <div class="card-img-overlay">
                                 <h6 class="card-title"> {{$project->projectName}} </h6>
                                 <p class="card-text"> {{$project->tagline}} </p>
@@ -63,5 +63,7 @@
             @endforeach   
         </div>
     </div>
-
+    <br>
+    <br>
+    <br>
 @endsection

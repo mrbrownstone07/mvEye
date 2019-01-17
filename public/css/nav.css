@@ -6,6 +6,13 @@
 
 .nav-link{
     text-transform: capitalize !important;
+    color: whitesmoke;
+    transition: .10s ease;
+}
+
+.nav-link:hover{
+    color: bisque;
+    transition: .10s ease;
 }
 
 .line{
@@ -14,10 +21,20 @@
     right: 0;
     width: inherit;
     height: 0;
-    background-color: black;
+    /* background-color:green; */
+    background-color: rgba(255, 228, 196, 0.7);
     transition: .10s ease;
 }
 
+.dropdown-item:hover{
+    background-color: rgba(200, 200, 200, 0.7);
+    /* background-color: rgba(0, 137, 24, 0.7); */
+}
+
 .dropdown-menu{
-    margin-top: 9%;
+    margin-top: 12%;
+}
+
+.bg-trans{
+    background-color: rgba(0, 0, 0, 0.7);
 }

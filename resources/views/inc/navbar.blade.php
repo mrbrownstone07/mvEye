@@ -1,9 +1,9 @@
 <link href="{{ asset('css/nav.css') }}" rel="stylesheet">
 
-<nav id="nav" class="navbar fixed-top navbar-expand-sm navbar-light shadow navbar-laravel bg-white">
+<nav id="nav" class="navbar fixed-top navbar-expand-md shadow-lg navbar-laravel bg-trans">
     <div class="no_wrap container-fluid">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon bg-dark"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
@@ -26,7 +26,7 @@
                     <a id="navbarDropdown" class="nav-link main-nav-item dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         About us
                     </a>
-                    <div class="dropdown-menu shadow dropdown-menu-right" aria-labelledby="navbarDropdown" style="">
+                    <div class="dropdown-menu bg-trans shadow dropdown-menu-right" aria-labelledby="navbarDropdown" style="">
                         <a class="dropdown-item nav-link" href="/about_us">
                             Team
                         </a>                        
@@ -42,7 +42,7 @@
                     <a id="navbarDropdown" class="nav-link main-nav-item dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         Projects
                     </a>
-                    <div class="dropdown-menu shadow dropdown-menu-right" aria-labelledby="navbarDropdown" style="">
+                    <div class="dropdown-menu bg-trans shadow dropdown-menu-right" aria-labelledby="navbarDropdown"  style="background-color: rgba(0, 0, 0, 0.7)">
                         <a class="dropdown-item nav-link" href="/architecture_projects">
                             Architecture
                         </a>                        
@@ -55,7 +55,7 @@
                     <a id="navbarDropdown" class="nav-link main-nav-item dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         Gallery
                     </a>
-                    <div class="dropdown-menu shadow dropdown-menu-right" aria-labelledby="navbarDropdown" style="">
+                    <div class="dropdown-menu bg-trans shadow dropdown-menu-right" aria-labelledby="navbarDropdown" style="">
                         <a class="dropdown-item nav-link" href="/rendering_gallery">
                             3D-Rendering
                         </a>
@@ -68,7 +68,7 @@
                     <a id="navbarDropdown" class="nav-link main-nav-item dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         Services
                     </a>
-                    <div class="dropdown-menu shadow dropdown-menu-right" aria-labelledby="navbarDropdown" style="">
+                    <div class="dropdown-menu bg-trans shadow dropdown-menu-right" aria-labelledby="navbarDropdown" style="">
                         <a class="dropdown-item nav-link" href="/architecture_secvice">
                             Architecture
                         </a>

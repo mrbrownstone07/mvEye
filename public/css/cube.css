@@ -18,22 +18,6 @@
     width: 100px;   
 }
 
-.single-rb img {
-    -webkit-transition: all .20s ease; /* Safari and Chrome */
-    -moz-transition: all .20s ease; /* Firefox */
-    -ms-transition: all .20s ease; /* IE 9 */
-    -o-transition: all .20s ease; /* Opera */
-    transition: all .20s ease;
-}
-
-.single-rb img:hover {
-    -webkit-transform:scale(1.05); /* Safari and Chrome */
-    -moz-transform:scale(1.05); /* Firefox */
-    -ms-transform:scale(1.05); /* IE 9 */
-    -o-transform:scale(1.05); /* Opera */
-     transform:scale(1.05);
-}
-
 .single-rb div{
     position: absolute;
     width: 100px;

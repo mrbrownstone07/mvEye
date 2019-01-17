@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Project;
 use App\Image;
+use App\Location;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use App\Services\PayUService\Exception;
@@ -29,9 +30,10 @@ class ProjectsController extends Controller
     }
 
     public function archProjectStore(Request $request){
+
         $this->validate($request,[
             'mainImg' => 'image|mimes:jpeg,png,jpg,gif,svg|max:8000',
-            'projName' => 'required|unique:projects',
+            'projectName' => 'required|unique:projects',
             'tagLine' => 'required',
             'des' => 'required',
             'type' => 'required',
@@ -40,7 +42,7 @@ class ProjectsController extends Controller
         ]);
 
         $p = new Project;
-        $p->projectName = $request->input('projName');
+        $p->projectName = $request->input('projectName');
         $p->tagline = $request->input('tagLine');
         $p->description = $request->input('des');
         $p->type = $request->input('type');
@@ -51,15 +53,27 @@ class ProjectsController extends Controller
             $img = $request->file('mainImg');
             $fileName = $img->getClientOriginalName();
             $fileName = md5($fileName) . '.' . $request->mainImg->extension();
-            $folderName = "public/" . $request->input('projName') . '/bg';
+            $folderName = "public/" . $request->input('projectName') . '/bg';
             Storage::makeDirectory($folderName);
             $request->mainImg->storeAs($folderName, $fileName);
             $p->mainImg = $fileName;
         }
 
-
-        
         $p->save();
+        $projectName = $request->input('projectName');
+        $proj = Project::where('projectName', '=', $projectName)->first();
+
+        $l = new Location;
+        $l->country = $request->input('country');
+        $l->zipcode = $request->input('zipCode');
+        $l->city = $request->input('city');
+        $l->area = $request->input('area');
+        $l->road = $request->input('road');
+        $l->section = $request->input('section');
+        $l->sector = $request->input('sector');
+        $l->project_id = $p->id;
+
+        $l->save();
 
         return redirect('/admin_architecture_projects/create')->with('success', 'project added');  
     }
@@ -107,7 +121,7 @@ class ProjectsController extends Controller
     public function archProjectUpdate(Request $request, $id){
         $this->validate($request,[
             'mainImg' => 'image|mimes:jpeg,png,jpg,gif,svg|max:8000',
-            'projName' => 'required',
+            'projectName' => 'required',
             'tagLine' => 'required',
             'des' => 'required',
             'type' => 'required',
@@ -118,8 +132,8 @@ class ProjectsController extends Controller
         $p = Project::find($id);
         
 
-        if($p->projectName != $request->input('projName') && !$request->hasFile('mainImg')){
-            $newFolderName = "public/" . $request->input('projName') . '/bg';
+        if($p->projectName != $request->input('projectName') && !$request->hasFile('mainImg')){
+            $newFolderName = "public/" . $request->input('projectName') . '/bg';
             $oldFolderName = "public/" . $p->projectName . '/bg';
             Storage::move($oldFolderName . '/' . $p->mainImg, $newFolderName . '/' . $p->mainImg);
             Storage::deleteDirectory('public/' . $p->projectName);
@@ -129,7 +143,7 @@ class ProjectsController extends Controller
             $img = $request->file('mainImg');
             $fileName = $img->getClientOriginalName();
             $fileName = md5($fileName) . '.' . $request->mainImg->extension();
-            $newFolderName = "public/" . $request->input('projName') . '/bg';
+            $newFolderName = "public/" . $request->input('projectName') . '/bg';
             $oldFolderName = "public/" . $p->projectName . '/bg';
             
             
@@ -140,7 +154,7 @@ class ProjectsController extends Controller
             $p->mainImg = $fileName;
         }
 
-        $p->projectName = $request->input('projName');
+        $p->projectName = $request->input('projectName');
         $p->tagline = $request->input('tagLine');
         $p->description = $request->input('des');
         $p->type = $request->input('type');
@@ -149,6 +163,21 @@ class ProjectsController extends Controller
 
         $p->save();
 
+        $projectName = $request->input('projectName');
+        // $proj = Project::where('projectName', '=', $projectName)->first();
+
+        
+        $l = Location::where('project_id', '=', $id)->first();
+        $l->country = $request->input('country');
+        $l->zipcode = $request->input('zipCode');
+        $l->city = $request->input('city');
+        $l->area = $request->input('area');
+        $l->road = $request->input('road');
+        $l->section = $request->input('section');
+        $l->sector = $request->input('sector');
+        $l->project_id = $id;
+
+        $l->save();
         return redirect('/admin_architecture_projects/show/' . $id)->with('success', 'Edition is saved');
     }
 

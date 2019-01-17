@@ -14,7 +14,7 @@ class AddFieldsToProjects extends Migration
     public function up()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->string('mainImg');
+            $table->string('mainImg')->nullable();
         });
     }
 

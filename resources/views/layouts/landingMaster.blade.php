@@ -34,7 +34,7 @@
         </script>
         
     </head>
-    <body style="margin-top:55px">
+    <body style="">
         @include('inc.navbar')
         @yield('content')
         {{-- @include('components.footbar') --}}

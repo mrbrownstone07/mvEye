@@ -11,9 +11,9 @@
                     @csrf
 
                     <div class="form-group row">
-                        <label for="projName" class="col-md-4 text-md-right">{{ __('project name') }}</label>
+                        <label for="projectName" class="col-md-4 text-md-right">{{ __('project name') }}</label>
                         <div class="col-md-6">
-                        <input value="{{$project->projectName}}" class="form-control" type="text" name="projName" id="projName" placeholder="project name">
+                        <input value="{{$project->projectName}}" class="form-control" type="text" name="projectName" id="projectName" placeholder="project name">
                         </div>
                     </div>
 
@@ -53,6 +53,50 @@
                         </div>
                         <div class="col-md-3 text-md-right">
                             <input type="radio" name="state" id="state" value="1"> finished 
+                        </div>
+                    </div>
+                    {{-- location --}}
+                    <div class="form-group row">
+                        <label for="country" class="col-md-4 text-md-right">{{ __('country') }}</label>
+                        <div class="col-md-6">
+                        <input value="{{$project->locations->country}}" class="form-control" type="text" name="country" id="country" placeholder="country">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="zipCode" class="col-md-4 text-md-right">{{ __('zip code') }}</label>
+                        <div class="col-md-6">
+                            <input value="{{$project->locations->zipcode}}" class="form-control" type="text" name="zipCode" id="zipCode" placeholder="zip code">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="city" class="col-md-4 text-md-right">{{ __('city') }}</label>
+                        <div class="col-md-6">
+                            <input value="{{$project->locations->city}}" class="form-control" type="text" name="city" id="city" placeholder="city">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="area" class="col-md-4 text-md-right">{{ __('area') }}</label>
+                        <div class="col-md-6">
+                            <input value="{{$project->locations->area}}" class="form-control" type="text" name="area" id="area" placeholder="area">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="road" class="col-md-4 text-md-right">{{ __('road') }}</label>
+                        <div class="col-md-6">
+                            <input value="{{$project->locations->road}}" class="form-control" type="text" name="road" id="road" placeholder="road">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="section" class="col-md-4 text-md-right">{{ __('section') }}</label>
+                        <div class="col-md-6">
+                            <input value="{{$project->locations->section}}" class="form-control" type="text" name="section" id="section" placeholder="section">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="sector" class="col-md-4 text-md-right">{{ __('sector') }}</label>
+                        <div class="col-md-6">
+                            <input value="{{$project->locations->sector}}" class="form-control" type="text" name="sector" id="sector" placeholder="sector">
                         </div>
                     </div>
 

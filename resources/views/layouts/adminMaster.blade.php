@@ -21,7 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/master.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="margin-top:70px">
     <div id="app">
         @include('inc.adminNav')
         <div class="container-fluid">
